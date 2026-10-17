@@ -1,5 +1,5 @@
 # App Risk Auditor — PS-01 On-Device App Risk Auditor
-
+-----------------------------------------------------
 Android app that scans installed apps on the device, sorts their permissions and special access
 into the nine PS-01 categories, and gives each app an explainable 0–100 risk score.
 
