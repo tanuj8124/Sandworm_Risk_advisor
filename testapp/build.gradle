@@ -1,0 +1,23 @@
+plugins {
+    id 'com.android.application'
+}
+
+// HARMLESS practice target: it only DECLARES risky permissions and components so the
+// auditor has something to flag. It contains no code that reads, records or sends anything.
+android {
+    namespace 'com.ps01.testkit'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.ps01.testkit.supertorch"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes { release { signingConfig signingConfigs.debug } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    lint { abortOnError false }
+}

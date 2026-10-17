@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">App Risk Auditor</string>
+    <string name="include_system">Include system apps</string>
+    <string name="monitor_installs">Watch new installs &amp; updates</string>
+    <string name="rescan">Rescan</string>
+    <string name="export_pdf">Export PDF</string>
+    <string name="file_scanner">File scanner (.exe, macro Excel/Word, PDFs, APKs…)</string>
+    <string name="network_monitor">Network monitor (which app talks to which server)</string>
+    <string name="scanning">Scanning installed apps…</string>
+    <string name="tap_band_hint">Tap a level to filter. Tap an app to see why it was flagged.</string>
+</resources>

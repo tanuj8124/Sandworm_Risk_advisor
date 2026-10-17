@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.ps01.riskauditor'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.ps01.riskauditor"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Signed with the debug key so `assembleRelease` gives an installable APK at the hackathon.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        noCompress 'tflite'
+    }
+}
+
+dependencies {
+    // On-device ML model from projectmatris/antimalwareapp (GPL-3.0). Runs fully offline.
+    implementation 'org.tensorflow:tensorflow-lite:2.16.1'
+}
+
