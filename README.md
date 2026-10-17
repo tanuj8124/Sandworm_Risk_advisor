@@ -9,12 +9,6 @@ into the nine PS-01 categories, and gives each app an explainable 0–100 risk s
 
 No root, no ADB for the end user, everything runs on the phone and the core features work offline.
 
-## Get the APK without installing anything (GitHub Actions)
-1. Create a new GitHub repository and push this folder to it.
-2. Open the repo's **Actions** tab. "Build APK" runs automatically (about 5 minutes).
-3. Open the finished run → **Artifacts** → download **AppRiskAuditor-apks**.
-   It contains `app-debug.apk` (the auditor) and `testapp-debug.apk` (the harmless Super Torch test target).
-
 ## Build (Android Studio)
 1. Open this folder in Android Studio (Ladybug or newer, JDK 17). Let Gradle sync.
 2. **Build ▸ Build APK(s)** → `app/build/outputs/apk/debug/app-debug.apk`
@@ -116,11 +110,3 @@ a trojan-like manifest (SMS + boot receivers, overlay, install packages…) scor
 * adb-installed apps show as **sideloaded** (installer = none / ADB shell).
 * Dangerous permissions installed via `adb install` are *not granted* until the app asks, so they count at 40 %. `adb install -g` grants them all.
 
-## Credits & licence
-Built with reference to **Hypatia** by Divested Computing Group
-(https://github.com/divested-mobile/hypatia, AGPL-3.0): package enumeration via
-`PackageManager`, base-APK SHA-256 hashing, the boot/package-replaced receiver and the
-framework-only UI approach follow Hypatia. The AI model and feature list come from
-**Project Matris AntiMalwareApp / LibreAV** (https://github.com/projectmatris/antimalwareapp, GPL-3.0).
-Because of both, this project is released under the **GNU AGPL-3.0** (see `LICENSE`; GPL-3.0 and AGPL-3.0
-explicitly allow being combined). Keep the source public (the PS asks for a repo link anyway).
